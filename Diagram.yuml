@@ -1,0 +1,21 @@
+// {type:class}
+// {direction:topDown}
+// {generate:true}
+[DefaultRhymersFactory]
+[<<RhymersFactory>>|GetStandardRhymer();GetFalseRhymer();GetFIFORhymer();GetHanoiRhymer()]
+[IntLinkedList|last;i|+push(i);+isEmpty();+isFull();+top();+pop()]
+[Node|+value;+prev;+next]
+[DefaultCountingOutRhymer|-NUMBERS;+total|+countIn(in);+callCheck();+isFull();pekaboo();+countOut()]
+[FIFORhymer|+temp|+countOut()]
+[HanoiRhymer|totalRejected|+reportedRejected();+countIn(in)]
+[RhymersDemo|factory|-testRhymers(factory)]
+
+[<<RhymersFactory>>]^-.-[DefaultRhymersFactory]
+[Node]-++[IntLinkedList]
+[DefaultCountingOutRhymer]^-[FIFORhymer]
+[DefaultCountingOutRhymer]^-[HanoiRhymer]
+
+[RhymersDemo]<-[DefaultRhymersFactory]
+[DefaultRhymersFactory]<-.-[DefaultCountingOutRhymer]
+[DefaultRhymersFactory]<-.-[FIFORhymer]
+[DefaultRhymersFactory]<-.-[HanoiRhymer]
