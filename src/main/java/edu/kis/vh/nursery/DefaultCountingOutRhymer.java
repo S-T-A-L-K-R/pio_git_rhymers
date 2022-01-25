@@ -1,11 +1,12 @@
 package edu.kis.vh.nursery;
 
+import edu.kis.vh.nursery.list.IntLinkedList;
+
 public class DefaultCountingOutRhymer 
 // TODO what this does actually?
 {
-	private static final int FULL_INT_2 = 12;
 	private static final int MINUSE_ONE = -1;
-	private final int[] NUMBERS = new int[FULL_INT_2];
+	private final IntLinkedList NUMBERS = new IntLinkedList();
 	public int total = MINUSE_ONE;
 
 	
@@ -16,7 +17,7 @@ public class DefaultCountingOutRhymer
 	{
 		if (!isFull()) 
 		{
-			NUMBERS[++total] = in;
+			NUMBERS.push(in);
 		}
 	}
 
@@ -26,7 +27,7 @@ public class DefaultCountingOutRhymer
 	 */
 	public boolean callCheck() 
 	{
-		return total == MINUSE_ONE;
+		return NUMBERS.isEmpty();
 	}
 		
 	
@@ -35,7 +36,7 @@ public class DefaultCountingOutRhymer
 	 */
 	public boolean isFull() 
 	{
-		return total == FULL_INT_2 - 1;
+		return NUMBERS.isFull();
 	}
 		
 	
@@ -48,7 +49,7 @@ public class DefaultCountingOutRhymer
 		{
 			return MINUSE_ONE;
 		}
-		return NUMBERS[total];
+		return NUMBERS.top();
 	}
 			
 	
@@ -61,7 +62,7 @@ public class DefaultCountingOutRhymer
 		{
 			return MINUSE_ONE;
 		}
-		return NUMBERS[total--];
+		return NUMBERS.pop();
 	}
 
 }
