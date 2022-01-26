@@ -1,15 +1,41 @@
 package edu.kis.vh.nursery;
 
+import edu.kis.vh.nursery.list.IntArrayStack;
 import edu.kis.vh.nursery.list.IntLinkedList;
 
 public class DefaultCountingOutRhymer 
 // TODO what this does actually?
 {
+	public void push(int in) {
+		NUMBERS.push(in);
+	}
+
+
+	public boolean isEmpty() {
+		return NUMBERS.isEmpty();
+	}
+
+
+	public int top() {
+		return NUMBERS.top();
+	}
+
+
+	public int pop() {
+		return NUMBERS.pop();
+	}
+
+
 	private static final int MINUSE_ONE = -1;
-	private final IntLinkedList NUMBERS = new IntLinkedList();
+	// private final IntLinkedList NUMBERS = new IntLinkedList();
+	private final IntArrayStack NUMBERS = new IntArrayStack();
 	public int total = MINUSE_ONE;
 
 	
+	public DefaultCountingOutRhymer() {
+	}
+
+
 	/** 
 	 * @param in
 	 */
