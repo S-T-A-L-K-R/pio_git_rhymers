@@ -1,11 +1,12 @@
 package edu.kis.vh.nursery.list;
 
-public class IntLinkedList 
+public class IntLinkedList implements ListInterface
 {
 	private static final int RETURN_VALUE = -1;
 	Node last;
 
-	public void push(int i) 
+	@Override
+	public void push(int i)
 	{
 		if (last == null)
 		{
@@ -19,17 +20,20 @@ public class IntLinkedList
 		}
 	}
 
-	public boolean isEmpty() 
+	@Override
+	public boolean isEmpty()
 	{
 		return last == null;
 	}
 
-	public boolean isFull() 
+	@Override
+	public boolean isFull()
 	{
 		return false;
 	}
 
-	public int top() 
+	@Override
+	public int top()
 	{
 		if (isEmpty())
 		{
@@ -38,7 +42,8 @@ public class IntLinkedList
 		return last.value;
 	}
 
-	public int pop() 
+	@Override
+	public int pop()
 	{
 		if (isEmpty())
 		{

@@ -26,7 +26,7 @@ public class DefaultCountingOutRhymer
 	}
 
 
-	private static final int MINUSE_ONE = -1;
+	private static final int MINUSE_ONE = 0;
 	// private final IntLinkedList NUMBERS = new IntLinkedList();
 	private final IntArrayStack NUMBERS = new IntArrayStack();
 	public int total = MINUSE_ONE;

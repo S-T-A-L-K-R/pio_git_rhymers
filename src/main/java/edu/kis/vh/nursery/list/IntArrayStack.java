@@ -1,6 +1,6 @@
 package edu.kis.vh.nursery.list;
 
-public class IntArrayStack {
+public class IntArrayStack implements ListInterface {
     private int[] NUMBERS = new int[12];
 	public int total = -1;
 
@@ -8,7 +8,8 @@ public class IntArrayStack {
 	/** 
 	 * @param in
 	 */
-	public void push(int in) 
+	@Override
+	public void push(int in)
 	{
 		if (!isFull()) 
 		{
@@ -20,7 +21,8 @@ public class IntArrayStack {
 	/** 
 	 * @return boolean
 	 */
-	public boolean isEmpty() 
+	@Override
+	public boolean isEmpty()
 	{
 		return total == -1;
 	}
@@ -29,7 +31,8 @@ public class IntArrayStack {
 	/** 
 	 * @return boolean
 	 */
-	public boolean isFull() 
+	@Override
+	public boolean isFull()
 	{
 		return total == 11;
 	}
@@ -38,7 +41,8 @@ public class IntArrayStack {
 	/** 
 	 * @return int
 	 */
-	public int top() 
+	@Override
+	public int top()
 	{
 		if (isEmpty()) 
 		{
@@ -51,7 +55,8 @@ public class IntArrayStack {
 	/** 
 	 * @return int
 	 */
-	public int pop() 
+	@Override
+	public int pop()
 	{
 		if (isEmpty()) 
 		{
