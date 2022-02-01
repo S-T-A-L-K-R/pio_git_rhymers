@@ -7,6 +7,11 @@ public class HanoiRhymer extends DefaultCountingOutRhymer
 		// TODO Auto-generated constructor stub
 	}
 
+	public HanoiRhymer(int i) {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	private static final int zeroInt = 0;
 	int totalRejected = zeroInt;
 

@@ -2,6 +2,7 @@ package edu.kis.vh.nursery;
 
 import edu.kis.vh.nursery.list.IntArrayStack;
 import edu.kis.vh.nursery.list.IntLinkedList;
+import edu.kis.vh.nursery.list.ListInterface;
 
 public class DefaultCountingOutRhymer 
 // TODO what this does actually?
@@ -28,13 +29,17 @@ public class DefaultCountingOutRhymer
 
 	private static final int MINUSE_ONE = 0;
 	// private final IntLinkedList NUMBERS = new IntLinkedList();
-	private final IntArrayStack NUMBERS = new IntArrayStack();
+	private final ListInterface NUMBERS;// = new IntArrayStack();
 	public int total = MINUSE_ONE;
 
 	
 	public DefaultCountingOutRhymer() {
+		NUMBERS = new IntArrayStack();
 	}
 
+	public DefaultCountingOutRhymer(int value) {
+		NUMBERS = new IntLinkedList();
+	}
 
 	/** 
 	 * @param in

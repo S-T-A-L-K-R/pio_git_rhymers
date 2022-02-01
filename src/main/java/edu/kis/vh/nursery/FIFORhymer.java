@@ -9,7 +9,12 @@ public class FIFORhymer extends DefaultCountingOutRhymer {
 		// TODO Auto-generated constructor stub
 	}
 
-//	public final DefaultCountingOutRhymer temp = new DefaultCountingOutRhymer();
+public FIFORhymer(int i) {
+	super();
+		// TODO Auto-generated constructor stub
+	}
+
+	//	public final DefaultCountingOutRhymer temp = new DefaultCountingOutRhymer();
 	public final IntLinkedList temp = new IntLinkedList();
 	@Override
 	public int countOut() {
