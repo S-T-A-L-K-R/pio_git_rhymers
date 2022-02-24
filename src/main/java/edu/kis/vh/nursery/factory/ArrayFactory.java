@@ -7,26 +7,22 @@ import edu.kis.vh.nursery.HanoiRhymer;
 public class ArrayFactory implements RhymersFactory {
 
 	@Override
-	public DefaultCountingOutRhymer GetStandardRhymer() {
-		// TODO Auto-generated method stub
+	public DefaultCountingOutRhymer getStandardRhymer() {
 		return new DefaultCountingOutRhymer();
 	}
 
 	@Override
-	public DefaultCountingOutRhymer GetFalseRhymer() {
-		// TODO Auto-generated method stub
+	public DefaultCountingOutRhymer getFalseRhymer() {
 		return new DefaultCountingOutRhymer();
 	}
 
 	@Override
-	public DefaultCountingOutRhymer GetFIFORhymer() {
-		// TODO Auto-generated method stub
+	public DefaultCountingOutRhymer getFIFORhymer() {
 		return new FIFORhymer();
 	}
 
 	@Override
-	public DefaultCountingOutRhymer GetHanoiRhymer() {
-		// TODO Auto-generated method stub
+	public DefaultCountingOutRhymer getHanoiRhymer() {
 		return new HanoiRhymer();
 	}
 

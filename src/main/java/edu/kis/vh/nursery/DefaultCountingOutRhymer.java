@@ -1,44 +1,17 @@
 package edu.kis.vh.nursery;
 
 import edu.kis.vh.nursery.list.IntArrayStack;
-import edu.kis.vh.nursery.list.IntLinkedList;
 import edu.kis.vh.nursery.list.ListInterface;
 
 public class DefaultCountingOutRhymer 
-// TODO what this does actually?
 {
-	public void push(int in) {
-		NUMBERS.push(in);
-	}
-
-
-	public boolean isEmpty() {
-		return NUMBERS.isEmpty();
-	}
-
-
-	public int top() {
-		return NUMBERS.top();
-	}
-
-
-	public int pop() {
-		return NUMBERS.pop();
-	}
-
-
-	private static final int MINUSE_ONE = 0;
-	// private final IntLinkedList NUMBERS = new IntLinkedList();
-	private final ListInterface NUMBERS;// = new IntArrayStack();
-	public int total = MINUSE_ONE;
+	private ListInterface numbers;
+	public int total = 0;
+    static final int MINUSE_ONE = -1;
 
 	
 	public DefaultCountingOutRhymer() {
-		NUMBERS = new IntArrayStack();
-	}
-
-	public DefaultCountingOutRhymer(int value) {
-		NUMBERS = new IntLinkedList();
+		numbers = new IntArrayStack();
 	}
 
 	/** 
@@ -48,7 +21,7 @@ public class DefaultCountingOutRhymer
 	{
 		if (!isFull()) 
 		{
-			NUMBERS.push(in);
+			numbers.push(in);
 		}
 	}
 
@@ -58,7 +31,7 @@ public class DefaultCountingOutRhymer
 	 */
 	public boolean callCheck() 
 	{
-		return NUMBERS.isEmpty();
+		return numbers.isEmpty();
 	}
 		
 	
@@ -67,7 +40,7 @@ public class DefaultCountingOutRhymer
 	 */
 	public boolean isFull() 
 	{
-		return NUMBERS.isFull();
+		return numbers.isFull();
 	}
 		
 	
@@ -80,7 +53,7 @@ public class DefaultCountingOutRhymer
 		{
 			return MINUSE_ONE;
 		}
-		return NUMBERS.top();
+		return numbers.top();
 	}
 			
 	
@@ -93,7 +66,7 @@ public class DefaultCountingOutRhymer
 		{
 			return MINUSE_ONE;
 		}
-		return NUMBERS.pop();
+		return numbers.pop();
 	}
 
 }

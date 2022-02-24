@@ -2,28 +2,27 @@ package edu.kis.vh.nursery.list;
 
 public class IntLinkedList implements ListInterface
 {
-	private static final int RETURN_VALUE = -1;
-	Node last;
+	private Node last;
 
 	@Override
 	public void push(int i)
 	{
-		if (last == null)
+		if (getLast() == null)
 		{
-			last = new Node(i);
+			setLast(new Node(i));
 		}
 		else 
 		{
-			last.next = new Node(i);
-			last.next.prev = last;
-			last = last.next;
+			getLast().setNext(new Node(i));
+			getLast().getNext().setPrev(getLast());
+			setLast(getLast().getNext());
 		}
 	}
 
 	@Override
 	public boolean isEmpty()
 	{
-		return last == null;
+		return getLast() == null;
 	}
 
 	@Override
@@ -37,9 +36,9 @@ public class IntLinkedList implements ListInterface
 	{
 		if (isEmpty())
 		{
-			return RETURN_VALUE;
+			return MINUSE_ONE;
 		}
-		return last.value;
+		return getLast().getValue();
 	}
 
 	@Override
@@ -47,10 +46,18 @@ public class IntLinkedList implements ListInterface
 	{
 		if (isEmpty())
 		{
-			return RETURN_VALUE;
+			return MINUSE_ONE;
 		}
-		int ret = last.value;
-		last = last.prev;
+		int ret = getLast().getValue();
+		setLast(getLast().getPrev());
 		return ret;
+	}
+
+	public Node getLast() {
+		return last;
+	}
+
+	public void setLast(Node last) {
+		this.last = last;
 	}
 }
