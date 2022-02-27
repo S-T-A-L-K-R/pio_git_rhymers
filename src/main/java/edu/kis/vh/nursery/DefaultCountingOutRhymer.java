@@ -5,14 +5,16 @@ import edu.kis.vh.nursery.list.ListInterface;
 
 public class DefaultCountingOutRhymer 
 {
+	// private int total = 0;
+	final static int VALUE_IF_EMPTY = -1;
 	private ListInterface numbers;
-	public int total = 0;
-    static final int MINUSE_ONE = -1;
-
-	
 	public DefaultCountingOutRhymer() {
-		numbers = new IntArrayStack();
+		this.numbers = new IntArrayStack();
 	}
+
+	public DefaultCountingOutRhymer(ListInterface numbers) {
+		this.numbers = numbers;
+	}	
 
 	/** 
 	 * @param in
@@ -51,7 +53,7 @@ public class DefaultCountingOutRhymer
 	{
 		if (callCheck()) 
 		{
-			return MINUSE_ONE;
+			return VALUE_IF_EMPTY;
 		}
 		return numbers.top();
 	}
@@ -64,7 +66,7 @@ public class DefaultCountingOutRhymer
 	{
 		if (callCheck()) 
 		{
-			return MINUSE_ONE;
+			return VALUE_IF_EMPTY;
 		}
 		return numbers.pop();
 	}

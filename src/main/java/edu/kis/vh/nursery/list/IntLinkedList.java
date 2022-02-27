@@ -36,7 +36,7 @@ public class IntLinkedList implements ListInterface
 	{
 		if (isEmpty())
 		{
-			return MINUSE_ONE;
+			return VALUE_IF_EMPTY;
 		}
 		return getLast().getValue();
 	}
@@ -46,7 +46,7 @@ public class IntLinkedList implements ListInterface
 	{
 		if (isEmpty())
 		{
-			return MINUSE_ONE;
+			return VALUE_IF_EMPTY;
 		}
 		int ret = getLast().getValue();
 		setLast(getLast().getPrev());

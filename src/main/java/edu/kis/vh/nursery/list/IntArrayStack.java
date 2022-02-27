@@ -1,8 +1,8 @@
 package edu.kis.vh.nursery.list;
 
 public class IntArrayStack implements ListInterface {
-	private int max = 12;
-	private int[] NUMBERS = new int[max];
+	private int MAX_SIZE = 12;
+	private int[] NUMBERS = new int[MAX_SIZE];
 	public int total = -1;
 	
 
@@ -26,7 +26,7 @@ public class IntArrayStack implements ListInterface {
 	@Override
 	public boolean isEmpty()
 	{
-		return total == MINUSE_ONE;
+		return total == VALUE_IF_EMPTY;
 	}
 		
 	
@@ -36,7 +36,7 @@ public class IntArrayStack implements ListInterface {
 	@Override
 	public boolean isFull()
 	{
-		return total == max - 1;
+		return total == MAX_SIZE - 1;
 	}
 		
 	

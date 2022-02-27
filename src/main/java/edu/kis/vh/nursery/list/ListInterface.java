@@ -2,7 +2,7 @@ package edu.kis.vh.nursery.list;
 
 public interface ListInterface {
     
-    static final int MINUSE_ONE = -1;
+    static final int VALUE_IF_EMPTY = -1;
     void push(int in);
 
     boolean isEmpty();
